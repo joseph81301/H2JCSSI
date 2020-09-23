@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About</title>
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <style media="screen">
+      @font-face {
+        font-family: Product Sans Regular;
+        src: url('fonts/google-sans-cufonfonts/ProductSans-Black.ttf');
+      }
+      body{
+        background-image: url("images/papyrus.png");
+        font-family: Product Sans Regular,serif;
+      }
+      .navigation_bar{
+        background-color: #EEE2DC;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 0px 2px #94888C;
+        opacity: .95;
+      }
+      a.nav{
+        text-decoration: none;
+        color: #AC3B61;
+        text-shadow: 0.5px 0.5px;
+        padding: 10px;
+        font-size: 20px;
+        /* border: 2px solid #AC3B61; */
+        border-radius: 10px;
+      }
+      a.nav:hover{
+        color: white;
+        background-color: #C16C89;
+      }
+      a{
+        text-decoration: none;
+        color: #AC3B61;
+        text-shadow: 0.5px 0.5px;
+        padding: 10px;
+        /* border: 2px solid #AC3B61; */
+        border-radius: 10px;
+      }
+      a.linked:hover{
+        color: white;
+        background-color: #C16C89;
+      }
+
+      #h1{
+        text-align: center;
+        color: #AC3B61;
+        font-family: Arial
+      }
+      .ProfilePic{
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        margin: 40px 40px;
+        flex-grow: 1;
+        border-style: solid
+      }
+      img#linkedin_img:hover{
+        width: 80px;
+        height: 80px
+      }
+      img#github_img:hover{
+        width: 80px;
+        height: 80px
+      }
+      #intro{
+        text-align: center;
+        color: black;
+        font-size: 50px;
+        text-align: center;
+        text-shadow: 2px 2px #CB849C;
+      }
+
+      .our_info{
+        font-size: 1em;
+        width: 800px;
+        margin-left: 30px;
+        flex-grow: 3;
+      }
+
+      .abt_us{
+        border-style: solid;
+        border-radius: 25px;
+        /* padding: 25px 100px; */
+        margin: 0px 50px;
+        vertical-align: middle;
+        box-shadow: 5px 5px 1px #888888;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        display:flex;
+        justify-content: space-evenly;
+      }
+
+      #linkedin{
+        width:70px;
+        height:70px;
+      }
+      #github{
+        width:70px;
+        height:70px;
+      }
+      #github_img{
+        width:70px;
+        height:70px;
+      }
+
+      #linkedin_img{
+        width:70px;
+        height:70px;
+      }
+      #all_of_us{
+        height: 30%;
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        border: solid;
+        border-width: thin;
+        border-radius: 10px;
+        box-shadow: 5px 5px 1px #888888;
+      }
+
+      #main_area{
+        background-color: #EDC7B7;
+        width: 80%;
+        height: 100%;
+        margin: 100px auto;
+        box-shadow: 10px 10px 5px #888;
+        border-style: hidden;
+        border-radius: 5px;
+        padding: 20px;
+      }
+      #jo_box{
+        background-color: #C2EDB7;
+      }
+      #jalyn_box{
+        background-color: #EDE2B7;
+      }
+      #hein_box{
+        background-color: #B7EDE2;
+      }
+      /* Dropdown Button */
+      .dropbtn {
+        background-color: #EEE2DC;
+        color: #AC3B61;
+        border: none;
+        text-decoration: none;
+        text-shadow: 0.5px 0.5px;
+        padding: 10px;
+        font-size: 20px;
+        /* border: 2px solid #AC3B61; */
+        border-radius: 10px;
+        font-family: Product Sans Regular,serif;
+      }
+
+      /* The container <div> - needed to position the dropdown content */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* Dropdown Content (Hidden by Default) */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        color: black;
+        font-size: 12px;
+        z-index: 1;
+        width: 175px;
+        font-size: 15px;
+        padding: 5px;
+        border-radius: 10px;
+        height: 50px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+      }
+
+      /* Links inside the dropdown */
+      .dropdown-content a {
+        text-decoration: none;
+        color: #AC3B61;
+        text-shadow: 0.5px 0.5px;
+        /* border: 2px solid #AC3B61; */
+        border-radius: 10px;
+      }
+
+      /* Change color of dropdown links on hover */
+      .dropdown-content a:hover{
+        color: white;
+        background-color: rgba(193, 108, 137, .6)
+      }
+
+      /* Show the dropdown menu on hover */
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* Change the background color of the dropdown button when the dropdown content is shown */
+      .dropdown:hover .dropbtn {
+        background-color: #C16C89;
+      }
+
+      .dropdown-content_links{
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main_area">
+      <div class="navigation_bar">
+        <h3><a class="nav" href="/">Home Page</a></h3>
+
+        {%if learning_style == "Visual" %}
+        <h3><a class="nav" href="/Visual">Learn</a></h3>
+
+        {% elif learning_style == "Auditory"%}
+        <h3><a class="nav" href="/Auditory">Learn</a></h3>
+
+        {% elif learning_style == "Reading/Writing"%}
+        <h3><a class="nav" href="/Writing">Learn</a></h3>
+
+        {%endif%}
+
+        <!-- <h3><a class="nav" href="/About">About</a></h3> -->
+
+      <h3><div class="dropdown">
+          <button class="dropbtn">About</button>
+          <div class="dropdown-content">
+            <a class="dropdown-content_links" href="/About">Who We Are</a>
+            <br><br>
+            <a class="dropdown-content_links" href="/Statistics">Mission Statement</a>
+            <br>
+          </div>
+        </div>
+      </h3>
+
+
+
+
+        <h3><a  class="nav" href="/Profile">Profile</a></h3>
+
+      </div>
+
+
+  <center> <h1 id="intro" > Meet the Team! </h1> </center>
+
+  <div class= "abt_us" id="hein_box">
+    <div>
+      <img id="Hein" class="ProfilePic" src="images/hein_gif.gif" alt="">
+    </div>
+    <div class="our_info">
+      <h1>Hein San</h1>
+      <p>Hello! My name is Hein San and I was born in Burma (Myanmar) but immigrated into America ~8 years ago! Currently, I’m going to study Computer Science at my local community college and aiming to transfer. Prior to Google’s Computer Science Summer Institute, I had no coding experience but thanks to this program, I learned so much more! If you have questions or advice, feel free to reach out to me.</p>
+      <a id="linkedin" href="https://www.linkedin.com/in/heinhsan/"> <img id="linkedin_img" src="https://cdn.freebiesupply.com/logos/large/2x/linkedin-icon-logo-png-transparent.png"> </a>
+      <a id="github" href="https://github.com/heinsanhtet"> <img id="github_img" src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" alt=""></a>
+
+    </div>
+
+  </div>
+
+<br><br>
+
+  <div class= "abt_us" id="jalyn_box">
+    <div>
+      <img id="Jalyn" class="ProfilePic" src="images/jalyn_gif.gif" alt="">
+    </div>
+    <div class="our_info">
+      <h1>Jalyn Derry</h1>
+      <p>Hey Y’all! My name is Jalyn and I was born and raised in Dallas, Texas. I considered myself a proficient programmer when I began this camp with knowledge of only Java and HTML. However, after a rigorous three weeks of nose-to-the-grind coding classes at CSSI (ahh jk), I discovered so much more! Now, I have knowledge of HTML, CSS, Python, and (sadly) JavaScript. I hope to one day utilize those skills to become a software engineer or Interactions Designers at a major tech company (wink, wink). I will be attending The University of Texas at Austin (HOOK EM!) with a major in Computer Science.</p>
+      <a id="linkedin" href="https://www.linkedin.com/in/jalyn-derry-2013b6189/"> <img id="linkedin_img" src="https://cdn.freebiesupply.com/logos/large/2x/linkedin-icon-logo-png-transparent.png"> </a>
+      <a id="github" href="https://github.com/jcderry5"> <img id="github_img" src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" alt=""></a>
+      <a id="instagram" href="https://www.instagram.com/jalynsjourney/"> <img id="github_img" src="https://www.incarnationcamp.org/wp-content/uploads/2018/09/social-instagram.png" alt=""></a>
+
+    </div>
+  </div>
+<br><br>
+  <div class= "abt_us" id="jo_box">
+    <div>
+      <img id="JoJo" class="ProfilePic" src="images/jo_gif.gif" alt="">
+    </div>
+    <div class="our_info">
+      <h1>Joseph Pabon</h1>
+      <p>My name is Joseph and I was born in Puerto Rico but moved to Florida when I was 8. I will be attending the University of Florida to pursue a degree in Computer Science. The Computer Science Institute has taught me so much in only a small amount of time as I had no prior experience in coding. </p>
+      <a id="linkedin" href="https://www.linkedin.com/in/joseph-pabon-navarro/"> <img id="linkedin_img" src="https://cdn.freebiesupply.com/logos/large/2x/linkedin-icon-logo-png-transparent.png"> </a>
+      <a id="github" href="https://github.com/joseph81301"> <img id="github_img" src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" alt=""></a>
+
+    </div>
+  </div>
+
+<br><br>
+<img id="all_of_us" src="images/all_gif.gif" alt="">
+
+
+</div>
+  </body>
+</html>

@@ -1,2 +1,1 @@
-# H2JCSSI
-CSSI website
+# shared

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Verbal/Auditory Learning Style</title>
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+<style>
+@font-face {
+  font-family: Product Sans Regular;
+  src: url('fonts/google-sans-cufonfonts/ProductSans-Black.ttf');
+}
+#title {
+  text-align: center;
+  color: black;
+  font-size: 50px;
+  text-align: center;
+  text-shadow: 2px 2px #CB849C;
+}
+
+.kewl {
+  background-color: #EEECEC;
+  width: 200px;
+  height: 200px;
+  border: 15px double #89A6B2;
+  border-radius: 5px;
+  padding: 50px;
+  margin: 20px;
+  color: black;
+  text-align: center;
+  font-size: 30px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.navigation_bar {
+  background-color: #EEE2DC;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 2px #94888C;
+  opacity: .95;
+}
+a.nav{
+  text-decoration: none;
+  color: #AC3B61;
+  text-shadow: 0.5px 0.5px;
+  padding: 10px;
+  font-size: 20px;
+  /* border: 2px solid #AC3B61; */
+  border-radius: 10px;
+}
+a.nav:hover{
+  color: white;
+  background-color: #C16C89;
+}
+.hey {
+  display: flex;
+  justify-content: space-around;
+
+}
+a{
+  text-decoration: none;
+  color: #AC3B61;
+  text-shadow: 0.5px 0.5px;
+  padding: 10px;
+  /* border: 2px solid #AC3B61; */
+  border-radius: 10px;
+}
+test {
+  font-size: 20px;
+}
+body {
+  background-color: #EDC7B7;
+  background-image: url("images/papyrus.png");
+  font-family: Product Sans Regular,serif;
+}
+#main_area{
+  background-color: #EDC7B7;
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 10px 10px 5px #888;
+  border-style: hidden;
+  border-radius: 5px;
+  padding: 20px;
+}
+select{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: Product Sans Regular,serif;
+  background-color: #B7C2ED;
+  box-shadow: 2px 1px rgba(166,166,166,.7);
+  border-style: solid;
+  border-color: black;
+}
+.calc, .algebra, .geometry, .pre,  .phy, .chem, .bio, .anatomy, .korea, .joan, .egypt, .rome{
+  border-style: double;
+  border-width: 6px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-color: #89A6B2;
+}
+/* Dropdown Button */
+.dropbtn {
+  background-color: #EEE2DC;
+  color: #AC3B61;
+  border: none;
+  text-decoration: none;
+  text-shadow: 0.5px 0.5px;
+  padding: 10px;
+  font-size: 20px;
+  /* border: 2px solid #AC3B61; */
+  border-radius: 10px;
+  font-family: Product Sans Regular,serif;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 12px;
+  z-index: 1;
+  width: 175px;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 10px;
+  height: 50px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  text-decoration: none;
+  color: #AC3B61;
+  text-shadow: 0.5px 0.5px;
+  /* border: 2px solid #AC3B61; */
+  border-radius: 10px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover{
+  color: white;
+  background-color: rgba(193, 108, 137, .6)
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #C16C89;
+}
+
+.dropdown-content_links{
+  padding: 10px;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script defer type="text/javascript">
+
+  $(document).ready(function(){
+    $("#math,#science, #history, #spoti").hide();
+    $("#mlink").click(function() {
+      $("#math, #science, .calc, .algebra, .geometry, .pre,  .phy, .chem, .bio, .anatomy, .korea, .joan, .egypt, .rome, #history").hide();
+      $("#math").show();
+    });
+    $("#mscience").click(function() {
+      $("#math, .calc, .algebra, .geometry, .pre, #science, .phy, .chem, .bio, .anatomy, .korea, .joan, .egypt, .rome, #history").hide();
+      $("#science").show();
+  });
+  $("#mhistory").click(function() {
+    $("#math, .calc, .algebra, .geometry, .pre, #science, .phy, .chem, .bio, .anatomy, .korea, .joan, .egypt, .rome").hide();
+    $("#history").show();
+});
+  $(".calc").hide();
+  $("#math").change(function() {
+    if($( "#math option:selected" ).val() == "calc")
+      {
+        $(".calc").show();
+      }
+      else {
+        $(".calc").hide();
+      }
+  });
+  $(".algebra").hide();
+  $("#math").change(function() {
+    if($( "#math option:selected" ).val() == "alg")
+      {
+        $(".algebra").show();
+      }
+      else {
+        $(".algebra").hide();
+      }
+  });
+  $(".geometry").hide();
+  $("#math").change(function() {
+    if($( "#math option:selected" ).val() == "geo")
+      {
+        $(".geometry").show();
+      }
+      else {
+        $(".geometry").hide();
+      }
+  });
+  $(".pre").hide();
+  $("#math").change(function() {
+    if($( "#math option:selected" ).val() == "precal")
+      {
+        $(".pre").show();
+      }
+      else {
+        $(".pre").hide();
+              }
+    });
+    $(".chem").hide();
+    $("#science").change(function() {
+      if($( "#science option:selected" ).val() == "chem")
+        {
+          $(".chem").show();
+        }
+        else {
+          $(".chem").hide();
+        }
+    });
+    $(".bio").hide();
+    $("#science").change(function() {
+      if($( "#science option:selected" ).val() == "bio")
+        {
+          $(".bio").show();
+        }
+        else {
+          $(".bio").hide();
+        }
+    });
+    $(".phy").hide();
+    $("#science").change(function() {
+      if($( "#science option:selected" ).val() == "phy")
+        {
+          $(".phy").show();
+        }
+        else {
+          $(".phy").hide();
+        }
+    });
+    $(".anatomy").hide();
+    $("#science").change(function() {
+      if($( "#science option:selected" ).val() == "anatomy")
+        {
+          $(".anatomy").show();
+        }
+        else {
+          $(".anatomy").hide();
+        }
+    });
+    $(".korea").hide();
+    $("#history").change(function() {
+      if($( "#history option:selected" ).val() == "korea")
+        {
+          $(".korea").show();
+        }
+        else {
+          $(".korea").hide();
+        }
+    });
+    $(".joan").hide();
+    $("#history").change(function() {
+      if($( "#history option:selected" ).val() == "joan")
+        {
+          $(".joan").show();
+        }
+        else {
+          $(".joan").hide();
+        }
+    });
+    $(".egypt").hide();
+    $("#history").change(function() {
+      if($( "#history option:selected" ).val() == "egypt")
+        {
+          $(".egypt").show();
+        }
+        else {
+          $(".egypt").hide();
+        }
+    });
+    $(".rome").hide();
+    $("#history").change(function() {
+      if($( "#history option:selected" ).val() == "rome")
+        {
+          $(".rome").show();
+        }
+        else {
+          $(".rome").hide();
+        }
+    });
+    $("p").hover(function() {
+      $(this).stop().animate({ fontSize : '25px' });
+},
+function() {
+      $(this).stop().animate({ fontSize : '16px' });
+});
+$("#spot").click(function() {
+  $("#spot").hide();
+  $("#spoti").show();
+});
+
+
+});
+</script>
+
+
+  </head>
+  <body >
+
+    <div class="navigation_bar">
+      <h3><a class="nav" href="/">Home Page</a></h3>
+
+      {%if learning_style == "Visual" %}
+      <h3><a class="nav" href="/Visual">Learn</a></h3>
+
+      {% elif learning_style == "Auditory"%}
+      <h3><a class="nav" href="/Auditory">Learn</a></h3>
+
+      {% elif learning_style == "Reading/Writing"%}
+      <h3><a class="nav" href="/Writing">Learn</a></h3>
+
+      {%endif%}
+
+      <!-- <h3><a class="nav" href="/About">About</a></h3> -->
+
+    <h3><div class="dropdown">
+        <button class="dropbtn">About</button>
+        <div class="dropdown-content">
+          <a class="dropdown-content_links" href="/About">Who We Are</a>
+          <br><br>
+          <a class="dropdown-content_links" href="/Statistics">Mission Statement</a>
+          <br>
+        </div>
+      </div>
+    </h3>
+
+
+
+
+      <h3><a  class="nav" href="/Profile">Profile</a></h3>
+      <h3  class="nav" id="spot"><a class="nav"> Play Music?</a></h3>
+
+      <iframe id="spoti" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8NTLI2TtZa6" width="250" height="75" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+    </div>
+
+<br><br><br><br>
+<div id="main_area">
+<h1 id="title" >You Got Verbal/Auditory Learning Style!</h1>
+
+<h3 style="text-align: center; color: black; text-shadow: 1px 1px #CB849C; align=center">Verbal/Auditory Learners tend to:  </h3>
+
+<p align="center">  Learn well through lectures</p>
+<p align="center">  Be an excellent listener </p>
+ <p align="center">  Reproduce symbols, letters or words by hearing them</p>
+
+<p align="center">  Like talking </p>
+
+<p align="center">  Enjoy plays, dialogues, dramas </p>
+
+<p align="center">  Learn concepts by listening to tapes </p>
+
+<p align="center">  Enjoy music </p>
+<p align="center">  Repeat or fulfill verbal instructions </p>
+
+</p>
+
+<br>
+<div class="flex">
+
+<div id="mlink" class="kewl">
+
+Learn Math
+<br><br>
+
+<img align="middle" height="150px" width="200px" align="center" src="https://3c1703fe8d.site.internapcdn.net/newman/csz/news/800/2018/1-mathematics.jpg" alt="">
+
+</div>
+<br>
+
+<div id="mscience" class="kewl">
+
+Learn Science
+<br><br>
+<img align="middle" height="150px" width="200px" align="center" src="https://ichef.bbci.co.uk/childrens-responsive-ichef-live/r/640/1x/cbbc/science-onward-journey_v3.png" alt="">
+</div>
+
+<div id="mhistory" class="kewl">
+
+Learn History
+<br><br>
+<img align="center" height="150px" width="200px" align="center" src="http://study.com/cimages/course-image/mttc-history-practice-study-guide_171851_large.jpg" alt="">
+
+
+</div>
+</div>
+<br><br>
+<div align="center" >
+
+<select id="math" name="math">
+  <option value="select">Select Math Topic</option>
+   <option value="calc">Calculus</option>
+   <option id="alg" value="alg">Algebra 2</option>
+   <option id="geo" value="geo">Geometry</option>
+   <option id="pre" value="precal">Pre-calculus</option>
+ </select>
+
+ <select id="science" name="science">
+   <option value="select">Select Science Topic</option>
+    <option value="bio">Biology</option>
+    <option  value="chem">Chemistry</option>
+    <option  value="phy">Physics</option>
+    <option  value="anatomy">Anatomy</option>
+  </select>
+
+  <select id="history" name="history">
+    <option value="select">Select History Topic</option>
+     <option value="korea">Korean War</option>
+     <option  value="joan">Joan of Arc</option>
+     <option  value="egypt">Cleopatra</option>
+     <option  value="rome">Fall of Rome</option>
+   </select>
+
+
+</div>
+<br><br><br>
+<div class="hey">
+
+<iframe class="calc" id="vid" width="420" height="315" src="https://www.youtube.com/embed/rAof9Ld5sOg" allowfullscreen>
+</iframe>
+<br>
+<iframe class="calc" id="vid" width="420" height="315" src="https://www.youtube.com/embed/YTKQswb60Pw"  allowfullscreen>
+</iframe>
+<br>
+<iframe class="algebra" id="vid" width="420" height="315" src="https://www.youtube.com/embed/etMK3xViMAc"  allowfullscreen>
+</iframe>
+<br>
+<iframe class="algebra" id="vid" width="420" height="315" src="https://www.youtube.com/embed/C206SNAXDGE"  allowfullscreen>
+</iframe>
+<br>
+<iframe class="geometry" id="vid" width="420" height="315" src="https://www.youtube.com/embed/w8wdKOsUD-4"  allowfullscreen>
+</iframe>
+<br>
+<iframe class="geometry" id="vid" width="420" height="315" src="https://www.youtube.com/embed/JnLDmw3bbuw"  allowfullscreen>
+</iframe>
+<br>
+<iframe class="pre" id="vid" width="420" height="315" src="https://www.youtube.com/embed/JrWJnwCMlP0"  allowfullscreen>
+</iframe>
+<br>
+<iframe class="pre" id="vid" width="420" height="315" src="https://www.youtube.com/embed/q6vgQEZuNKk"  allowfullscreen>
+</iframe>
+
+<iframe class="chem" id="vid" width="420" height="315" src="https://www.youtube.com/embed/eNsVaUCzvLA"  allowfullscreen>
+</iframe>
+
+<iframe class="chem" id="vid" width="420" height="315" src="https://www.youtube.com/embed/bka20Q9TN6M"  allowfullscreen>
+</iframe>
+
+<iframe class="bio" id="vid" width="420" height="315" src="https://www.youtube.com/embed/URUJD5NEXC8"  allowfullscreen>
+</iframe>
+
+<iframe class="bio" id="vid" width="420" height="315" src="https://www.youtube.com/embed/00jbG_cfGuQ"  allowfullscreen>
+</iframe>
+
+<iframe class="phy" id="vid" width="420" height="315" src="https://www.youtube.com/embed/2WS1sG9fhOk"  allowfullscreen>
+</iframe>
+
+<iframe class="phy" id="vid" width="420" height="315" src="https://www.youtube.com/embed/-6IgkG5yZfo"  allowfullscreen>
+</iframe>
+
+<iframe class="anatomy" id="vid" width="420" height="315" src="https://www.youtube.com/embed/uBGl2BujkPQ"  allowfullscreen>
+</iframe>
+
+<iframe class="anatomy" id="vid" width="420" height="315" src="https://www.youtube.com/embed/i5tR3csCWYo"  allowfullscreen>
+</iframe>
+
+<iframe class="korea" id="vid" width="420" height="315" src="https://www.youtube.com/embed/jA9neyKI62k"  allowfullscreen>
+</iframe>
+
+<iframe class="korea" id="vid" width="420" height="315" src="https://www.youtube.com/embed/yxaegqvl4aE"  allowfullscreen>
+</iframe>
+
+<iframe class="joan" id="vid" width="420" height="315" src="https://www.youtube.com/embed/FG5xkeeQmSg"  allowfullscreen>
+</iframe>
+
+<iframe class="joan" id="vid" width="420" height="315" src="https://www.youtube.com/embed/4XFVzpJxgUk"  allowfullscreen>
+</iframe>
+
+<iframe class="egypt" id="vid" width="420" height="315" src="https://www.youtube.com/embed/pLtZTzSatHY"  allowfullscreen>
+</iframe>
+
+<iframe class="egypt" id="vid" width="420" height="315" src="https://www.youtube.com/embed/lRs4Vt6Pu-0"  allowfullscreen>
+</iframe>
+
+<iframe class="rome" id="vid" width="420" height="315" src="https://www.youtube.com/embed/KJz15Y6hKMM"  allowfullscreen>
+</iframe>
+<iframe class="rome" id="vid" width="420" height="315" src="https://www.youtube.com/embed/3PszVWZNWVA"  allowfullscreen>
+</iframe>
+
+
+</div>
+</div>
+  </body>
+
+</html>
